@@ -15,6 +15,7 @@ Plugin 'Valloric/YouCompleteMe'
 Plugin 'scrooloose/syntastic'
 Plugin 'altercation/vim-colors-solarized'
 Plugin 'Lokaltog/powerline'
+Plugin 'Raimondi/delimitMate'
 
 
 filetype plugin indent on
