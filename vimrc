@@ -16,6 +16,9 @@ Plugin 'scrooloose/syntastic'
 Plugin 'altercation/vim-colors-solarized'
 Plugin 'Lokaltog/powerline'
 Plugin 'Raimondi/delimitMate'
+Plugin 'SirVer/ultisnips'
+Plugin 'honza/vim-snippets'
+Plugin 'ervandew/supertab'
 
 
 filetype plugin indent on
@@ -34,7 +37,11 @@ nnoremap <F2> :set nonumber!<CR>:set foldcolumn=0<CR>
 nnoremap <F5> :GundoToggle<CR>
 autocmd FileType python :nnoremap E :w <Bar> !python %<CR>
 
+let g:ycm_key_list_select_completion = ['<C-TAB>', '<Down>']
+let g:ycm_key_list_previous_completion = ['<C-S-TAB>', '<UP>']
+let g:SuperTabDefaultCompletionType = '<C-Tab>'
+
 set tabstop=4
 set expandtab
-set softtabstop=4
+set softtabstop=3
 set shiftwidth=4
