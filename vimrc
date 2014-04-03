@@ -40,6 +40,7 @@ autocmd FileType python :nnoremap E :w <Bar> !python %<CR>
 let g:ycm_key_list_select_completion = ['<C-TAB>', '<Down>']
 let g:ycm_key_list_previous_completion = ['<C-S-TAB>', '<UP>']
 let g:SuperTabDefaultCompletionType = '<C-Tab>'
+let g:UltiSnipsListSnippets = '<c-m>'
 
 set tabstop=4
 set expandtab
