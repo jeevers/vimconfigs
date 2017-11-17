@@ -19,6 +19,12 @@ Plugin 'Raimondi/delimitMate'
 Plugin 'ervandew/supertab'
 Plugin 'SirVer/ultisnips'
 Plugin 'honza/vim-snippets'
+Plugin 'lepture/vim-jinja'
+Plugin 'wkentaro/conque.vim'
+Plugin 'hashivim/vim-hashicorp-tools'
+Plugin 'fatih/vim-go'
+Plugin 'rust-lang/rust.vim'
+Plugin 'scrooloose/nerdtree.git'
 
 call vundle#end()
 
@@ -30,13 +36,28 @@ set background=dark
 colorscheme solarized
 set number
 set encoding=utf-8
+set cursorline
+set cursorcolumn
 "autocmd FileType python set complete+=k~/.vim/syntax/python.vim isk+=.,(
+let delimitMate_expand_cr=1
 let g:vim_markdown_folding_disabled=1
+let g:syntastic_go_checkers = ['go', 'golint', 'errcheck']
+let g:syntastic_rust_checkers = ['cargo']
+let g:rustfmt_autosave = 1
 set rtp+=~/.vim/bundle/powerline/powerline/bindings/vim/
 set laststatus=2
 nnoremap <F2> :set nonumber!<CR>:set foldcolumn=0<CR>
 nnoremap <F5> :GundoToggle<CR>
 autocmd FileType python :nnoremap E :w <Bar> !python %<CR>
+autocmd FileType go :nnoremap E :w <Bar> GoRun<CR>
+autocmd FileType sh :nnoremap E :w <Bar> !./%<CR>
+autocmd FileType rust :nnoremap E :w <Bar> !cargo run %<CR>
+
+"nerdtree stuff
+"autocmd VimEnter * NERDTree
+"autocmd BufEnter * NERDTreeMirror
+nmap <C-n> :NERDTreeToggle<CR>
+"nmap <silent> <F7> :NERDTreeFind<CR>
 
 let g:ycm_key_list_select_completion = ['<C-TAB>', '<Down>']
 let g:ycm_key_list_previous_completion = ['<C-S-TAB>', '<UP>']
@@ -45,5 +66,5 @@ let g:SuperTabDefaultCompletionType = '<C-Tab>'
 
 set tabstop=4
 set expandtab
-set softtabstop=3
+set softtabstop=4
 set shiftwidth=4
